@@ -54,7 +54,7 @@
 
 @keyframes animation-fall {
   0% {
-    transform: translate(var(--x-position), -100%);
+    transform: translate(var(--x-position), calc( var(--size) * -1 ));
   }
 
   100% {
