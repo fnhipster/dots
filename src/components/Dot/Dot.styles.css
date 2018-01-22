@@ -1,0 +1,77 @@
+
+.game__dot {
+  --color_1: #FF4338;
+  --color_2: #FF9238;
+  --color_3: #FFF538;
+  --color_4: #38B9FF;
+  --color_5: #2D1E2F;
+  animation-duration: var(--speed, 5000);
+  animation-fill-mode: forwards;
+  animation-name: animation-fall;
+  animation-timing-function: linear;
+  display: block;
+  height: var(--size, 100px);
+  position: absolute;
+  width: var(--size, 100px);
+  will-change: transform;
+}
+
+.game__dot::before {
+  border-radius: var(--size, 100px);
+  content: "";
+  display: block;
+  height: var(--size, 100px);
+  transform-origin: 0% 0%;
+  width: var(--size, 100px);
+  will-change: opacity, scale, filter;
+}
+
+.game__dot--color--1::before {
+  background-color: var(--color_1);
+}
+
+.game__dot--color--2::before {
+  background-color: var(--color_2);
+}
+
+.game__dot--color--3::before {
+  background-color: var(--color_3);
+}
+
+.game__dot--color--4::before {
+  background-color: var(--color_4);
+}
+
+.game__dot--color--5::before {
+  background-color: var(--color_5);
+}
+
+.game__dot--popped::before {
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
+  animation-name: animation-pop;
+}
+
+@keyframes animation-fall {
+  0% {
+    transform: translate(var(--x-position), -100%);
+  }
+
+  100% {
+    transform: translate(var(--x-position), var(--y-position));
+  }
+}
+
+@keyframes animation-pop {
+  0% {
+    filter: blur(0px);
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(2, 2);
+    filter: blur(20px);
+  }
+}

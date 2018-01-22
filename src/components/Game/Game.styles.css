@@ -1,0 +1,19 @@
+
+.game {
+  background: linear-gradient(to bottom, #70e1f5, #ffd194);
+  display: flex;
+  flex-direction: column;
+  font-family: 'Titan One', cursive;
+  font-size: 16px;
+  height: 100%;
+  line-height: 1;
+  margin: 0;
+  overflow: hidden;
+}
+
+.game__header {
+  background-image: linear-gradient(-20deg, #e9defa 0%, #fbfcdb 100%);
+  box-shadow: #000 1px 1px 30px;
+  display: flex;
+  z-index: 1;
+}

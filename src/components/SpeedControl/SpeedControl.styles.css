@@ -1,0 +1,49 @@
+.game__speed-control {
+  --color: #222;
+  align-items: center;
+  display: flex;
+  flex: 1;
+  padding: 0.5em 1em;
+}
+
+.game__speed-control__icon {
+  background-image: var(--icon-speed);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: block;
+  height: 2em;
+  margin-right: 0.3em;
+  width: 2em;
+}
+
+.game__speed-control__range {
+  -webkit-appearance:none;
+  background-color: var(--color);
+  height: 2px;
+  position: relative;
+  width: 100%;
+  padding: 0 0.5em;
+}
+
+.game__speed-control__range::-webkit-slider-thumb {
+  -webkit-appearance:none;
+  /* background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%); */
+  /* border: 2px solid var(--color); */
+  background-color: var(--color);
+  border-radius: 100%;
+  cursor: pointer;
+  height: 2em;
+  position: relative;
+  width: 2em;
+  will-change: transform;
+  transition: 300ms transform ease;
+}
+
+.game__speed-control__range::-webkit-slider-thumb:active {
+  transform: scale(2);
+}
+
+.game__speed-control__range:focus {
+  outline: none;
+}

@@ -1,0 +1,13 @@
+.game__viewport {
+  animation-duration: 0.001s;
+  animation-name: animation-fadein;
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  will-change: opacity;
+}
+
+@keyframes animation-fadein {  
+	from { opacity: 0; }
+	to { opacity: 1; }  
+}
