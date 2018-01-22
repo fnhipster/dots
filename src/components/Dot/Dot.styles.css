@@ -21,7 +21,7 @@
   content: "";
   display: block;
   height: var(--size, 100px);
-  opacity: 0.85;
+  opacity: 0.80;
   transform-origin: 0% 0%;
   width: var(--size, 100px);
   will-change: opacity, scale, filter;
