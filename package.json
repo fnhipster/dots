@@ -1,8 +1,8 @@
 {
-  "name": "game-indeed",
+  "name": "🔴💥",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A game about dots that get popped",
+  "main": "./src/index.js",
   "dependencies": {},
   "devDependencies": {
     "css-loader": "^0.28.9",
@@ -15,6 +15,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack"
   },
-  "author": "",
+  "author": "Carlos A. Cabrera <carlosacabrera@me.com>",
   "license": "ISC"
 }
