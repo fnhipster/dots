@@ -4,9 +4,8 @@ import { createElement } from '../../lib/element';
 
 import { store } from '../../store';
 
+import { HeaderComponent } from '../Header/Header.component';
 import { ViewportComponent } from '../Viewport/Viewport.component';
-import { SpeedControlComponent } from '../SpeedControl/SpeedControl.component';
-import { ScoreComponent } from '../Score/Score.component';
 
 export const GameComponent = function() {
 
@@ -23,11 +22,7 @@ export const GameComponent = function() {
         }
       },
       
-      createElement('div', { class: 'game__header' },
-        createElement(ScoreComponent),
-        createElement(SpeedControlComponent)
-      ),
-
+      createElement(HeaderComponent),
       createElement(ViewportComponent)
     )
 

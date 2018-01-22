@@ -47,11 +47,12 @@ export const ViewportComponent = () => {
         if (animationName === 'animation-fall' || animationName === 'animation-pop') {
           console.log('[Dot] R.I.P.');
           target.remove();
-          /*** A new dot should appear at the top of the page 1000ms later */
-          setTimeout(() => appendNewDot(viewport), 1000);
         }
       },
       onClick: ({target}) => {
+        
+        if (target.classList.contains('game__dot--popped')) return;
+
         /*** 
          * The score should be incremented by a value inversely proportional to the size of the dot, 
          * with 10px dots worth 10 points, and 100px dots worth 1 point.
@@ -62,6 +63,9 @@ export const ViewportComponent = () => {
 
         /*** Pop bubble */
         target.classList.add('game__dot--popped');
+
+         /*** A new dot should appear at the top of the page 1000ms later */
+         setTimeout(() => appendNewDot(viewport), 1000);
       }
     });
 
