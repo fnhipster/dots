@@ -1,9 +1,11 @@
 {
-  "name": "🔴💥",
+  "name": "Pop",
   "version": "1.0.0",
   "description": "A game about dots that get popped",
   "main": "./src/index.js",
-  "dependencies": {},
+  "dependencies": {
+    "uglifyjs-webpack-plugin": "1.0.0-beta.1"
+  },
   "devDependencies": {
     "css-loader": "^0.28.9",
     "style-loader": "^0.19.1",
@@ -13,7 +15,7 @@
   "scripts": {
     "start": "webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "build": "NODE_ENV=production webpack"
   },
   "author": "Carlos A. Cabrera <carlosacabrera@me.com>",
   "license": "ISC"

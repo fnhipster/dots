@@ -1,4 +1,6 @@
+const Uglify = require("uglifyjs-webpack-plugin");
 const path = require('path');
+const debug = process.env.NODE_ENV !== 'production';
 
 module.exports = {
   entry: './src/index.js',
@@ -14,7 +16,17 @@ module.exports = {
       }
     ]
   },
-  devtool: 'source-map',
+  plugins: !debug ? [
+    new Uglify({
+      uglifyOptions: {
+        comments: false,
+        compress: {
+          drop_console: true
+        },
+      }
+    })
+  ] : [],
+  devtool: debug ? 'source-map' : false,
   devServer: {
     contentBase: path.join(__dirname, "public"),
     compress: true,

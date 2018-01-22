@@ -10,4 +10,4 @@ __Preview:__ <https://carlosacabrera.github.io/dots/public/>
 `yarn start`
 
 ### Create a new build
-`yarn build`
+`yarn run build`
