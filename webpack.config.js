@@ -1,35 +1,24 @@
-const Uglify = require("uglifyjs-webpack-plugin");
-const path = require('path');
-const debug = process.env.NODE_ENV !== 'production';
+const path = require("path");
+const debug = process.env.NODE_ENV !== "production";
 
 module.exports = {
-  entry: './src/index.js',
+  entry: "./src/index.js",
   output: {
-    path: path.resolve(__dirname, 'public'),
-    filename: 'bundle.js'
+    path: path.resolve(__dirname, "public"),
+    filename: "bundle.js",
   },
   module: {
     rules: [
       {
         test: /\.css$/,
-        use: [ 'style-loader', 'css-loader' ]
-      }
-    ]
+        use: ["style-loader", "css-loader"],
+      },
+    ],
   },
-  plugins: !debug ? [
-    new Uglify({
-      uglifyOptions: {
-        comments: false,
-        compress: {
-          drop_console: true
-        },
-      }
-    })
-  ] : [],
-  devtool: debug ? 'source-map' : false,
+  devtool: debug ? "source-map" : false,
   devServer: {
     contentBase: path.join(__dirname, "public"),
     compress: true,
-    port: 9000
-  }
+    port: 3001,
+  },
 };
